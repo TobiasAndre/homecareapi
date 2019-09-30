@@ -17,10 +17,7 @@ module Api
         begin
           @device_reading = DeviceReading.find_by(tracking_number: params[:tracking_number])
           unless @device_reading.nil?
-            stats_info = "{ "+ @device_reading.temperature_data + "," +
-                               @device_reading.humidity_data + "," +
-                               @device_reading.battery_charge_data+ " }"
-            render json: JSON.parse(stats_info), status: :ok
+            render json: @device_reading.reading_data.to_json, status: :ok
           else
             render json: 'no data found', status: :not_found
           end
