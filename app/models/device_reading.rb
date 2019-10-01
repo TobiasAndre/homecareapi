@@ -1,6 +1,8 @@
 class DeviceReading < ApplicationRecord
   belongs_to :device
 
+  # creating a specific query to increase performance
+  # and prevent too many queries at the database
   def reading_data
     result_query = ActiveRecord::Base.connection.execute(
       "select max, min, avg, reading_type from ("+

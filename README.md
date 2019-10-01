@@ -1,24 +1,11 @@
-# README
+HOMECARE API
+===================
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This api collect readings from IoT thermostats and report a simple statistics against them.
+We assume that the thermostats are connected to the network and they're pushing their data in real time (because they don't have the capacity to buffer them).
 
-Things you may want to cover:
+Project details:
+* Ruby: 2.6.3
+* Rails: 5.2.3
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This project uses sidekiq for enqueue jobs for database writing.

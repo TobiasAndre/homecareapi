@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Request device readings controller', type: :request do
   let(:device){create(:device)}
 
-  describe 'device_readings#get_by_tracking_number' do
+  describe 'getting device readings' do
     context 'not authorized request' do
       before { get '/api/v1/device_readings', params: {}, headers: nil }
 
@@ -21,7 +21,7 @@ RSpec.describe 'Request device readings controller', type: :request do
     end
   end
 
-  describe 'device_readings#get_device_stats' do
+  describe 'getting device stats' do
     context 'not authorized request' do
       before { get '/api/v1/device_stats', params: {}, headers: nil }
 
@@ -48,7 +48,7 @@ RSpec.describe 'Request device readings controller', type: :request do
     end
   end
 
-  describe 'device_readings#create' do
+  describe 'saving device readings' do
     context 'not authorized request' do
       before { post '/api/v1/device_readings', params: {}, headers: nil }
 
