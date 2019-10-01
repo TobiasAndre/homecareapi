@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   
   namespace :api do
     namespace :v1 do
+      get 'devices', to: 'devices#show'
       post 'device_readings', to: 'device_readings#create'
       get 'device_readings', to: 'device_readings#get_by_tracking_number'
       get 'device_stats', to: 'device_readings#get_device_stats'

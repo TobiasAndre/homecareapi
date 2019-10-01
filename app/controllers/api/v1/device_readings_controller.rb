@@ -15,7 +15,7 @@ module Api
 
       def get_device_stats
         begin
-          @device_reading = DeviceReading.find_by(tracking_number: params[:tracking_number])
+          @device_reading = DeviceReading.find_by(device_id: @current_device.id)
           unless @device_reading.nil?
             render json: @device_reading.reading_data.to_json, status: :ok
           else
