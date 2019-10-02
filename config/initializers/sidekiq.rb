@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'sidekiq/api'
 
 sidekiq_config = { url: ENV['ACTIVE_JOB_URL'] }

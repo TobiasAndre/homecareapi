@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Request device readings controller', type: :request do
-  let(:device){create(:device)}
+  let(:device) { create(:device) }
 
   describe 'getting device readings' do
     context 'not authorized request' do
@@ -11,9 +13,12 @@ RSpec.describe 'Request device readings controller', type: :request do
         expect(response).to have_http_status(401)
       end
     end
-    
+
     context 'authorized request' do
-      before { get '/api/v1/device_readings', params: {}, headers: { 'Authorization': 'Bearer '+device.household_token } }
+      before do
+        get '/api/v1/device_readings', params: {},
+                                       headers: { 'Authorization': 'Bearer ' + device.household_token }
+      end
 
       it 'returns device readings and status code 200' do
         expect(response).to have_http_status(200)
@@ -29,9 +34,12 @@ RSpec.describe 'Request device readings controller', type: :request do
         expect(response).to have_http_status(401)
       end
     end
-    
+
     context 'authorized request but no data found' do
-      before { get '/api/v1/device_stats', params: {}, headers: { 'Authorization': 'Bearer '+device.household_token } }
+      before do
+        get '/api/v1/device_stats', params: {},
+                                    headers: { 'Authorization': 'Bearer ' + device.household_token }
+      end
 
       it 'returns 404 if device not contains data' do
         expect(response).to have_http_status(404)
@@ -39,8 +47,11 @@ RSpec.describe 'Request device readings controller', type: :request do
     end
 
     context 'authorized request and data found' do
-      let(:device_reading){create(:device_reading)}
-      before { get '/api/v1/device_stats', params: {}, headers: { 'Authorization': 'Bearer '+device_reading.device.household_token } }
+      let(:device_reading) { create(:device_reading) }
+      before do
+        get '/api/v1/device_stats', params: {},
+                                    headers: { 'Authorization': 'Bearer ' + device_reading.device.household_token }
+      end
 
       it 'returns device stats and status code 200' do
         expect(response).to have_http_status(200)
@@ -58,7 +69,10 @@ RSpec.describe 'Request device readings controller', type: :request do
     end
 
     context 'authorized request' do
-      before { post '/api/v1/device_readings', params: {}, headers: { 'Authorization': 'Bearer '+device.household_token } }
+      before do
+        post '/api/v1/device_readings', params: {},
+                                        headers: { 'Authorization': 'Bearer ' + device.household_token }
+      end
 
       it 'returns device stats and status code 201' do
         expect(response).to have_http_status(201)

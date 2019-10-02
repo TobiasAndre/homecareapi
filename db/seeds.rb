@@ -7,13 +7,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-puts "=================================================================="
+puts '=================================================================='
 d = Device.create(location: 'Besselstraße 14, 10969 Berlin, Deutschland')
-puts "Token: ( "+d.household_token+" ) Location=( "+d.location+" )"
+puts 'Token: ( ' + d.household_token + ' ) Location=( ' + d.location + ' )'
 d = Device.create(location: 'Krausenstraße 21, 10117 Berlin, Deutschland')
-puts "Token: ( "+d.household_token+" ) Location=( "+d.location+" )"
+puts 'Token: ( ' + d.household_token + ' ) Location=( ' + d.location + ' )'
 d = Device.create(location: 'Leipziger Str. 42, 10117 Berlin, Deutschland')
-puts "Token: ( "+d.household_token+" ) Location=( "+d.location+" )"
+puts 'Token: ( ' + d.household_token + ' ) Location=( ' + d.location + ' )'
 d = Device.create(location: 'Behrenstraße 55-57, 10117 Berlin, Deutschland')
-puts "Token: ( "+d.household_token+" ) Location=( "+d.location+" )"
-puts "=================================================================="
+puts 'Token: ( ' + d.household_token + ' ) Location=( ' + d.location + ' )'
+puts '=================================================================='

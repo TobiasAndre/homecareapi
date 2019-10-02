@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 module DeviceReadings
   class CreateService
+
     attr_reader :device_reading
 
     def initialize(device_reading:)
@@ -9,8 +12,8 @@ module DeviceReadings
     def call
       ActiveRecord::Base.transaction do
         @device_readings.save!
-      rescue ActiveRecord::RecordInvalid => error
-        raise error
+      rescue ActiveRecord::RecordInvalid => e
+        raise e
       end
     end
 

@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 class CreateDevices < ActiveRecord::Migration[5.2]
+
   def change
     create_table :devices do |t|
       t.string :household_token
@@ -7,4 +10,5 @@ class CreateDevices < ActiveRecord::Migration[5.2]
       t.timestamps
     end
   end
+
 end

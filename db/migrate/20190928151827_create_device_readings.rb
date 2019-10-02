@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 class CreateDeviceReadings < ActiveRecord::Migration[5.2]
+
   def change
     create_table :device_readings do |t|
       t.integer :tracking_number
@@ -10,4 +13,5 @@ class CreateDeviceReadings < ActiveRecord::Migration[5.2]
     add_reference :device_readings, :device, index: true
     add_foreign_key :device_readings, :devices
   end
+
 end

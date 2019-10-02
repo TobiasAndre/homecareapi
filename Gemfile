@@ -45,6 +45,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   gem 'dotenv-rails'
+  gem 'massa'
   # Test framework
   gem 'database_cleaner'
   gem 'factory_bot_rails'
@@ -52,6 +53,7 @@ group :development, :test do
   gem 'ffaker'
   gem 'rspec-json_expectations', '~> 2.2'
   gem 'rspec-rails', '~> 3.8'
+  gem 'rubocop'
   gem 'shoulda-matchers', '~> 4.1', '>= 4.1.2'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
