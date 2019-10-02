@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
-
+# rubocop:disable Metrics/BlockLength
 RSpec.describe 'Request device readings controller', type: :request do
   let(:device) { create(:device) }
 

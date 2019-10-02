@@ -51,6 +51,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'ffaker'
+  gem 'rails_best_practices'
   gem 'rspec-json_expectations', '~> 2.2'
   gem 'rspec-rails', '~> 3.8'
   gem 'rubocop'

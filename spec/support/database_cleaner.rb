@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'database_cleaner'
-
+# rubocop:disable Metrics/BlockLength
 RSpec.configure do |config|
   config.use_transactional_fixtures = false
 
