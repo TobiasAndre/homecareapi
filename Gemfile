@@ -44,6 +44,7 @@ gem 'logstash-event'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
+  gem 'brakeman'
   gem 'dotenv-rails'
   gem 'massa'
   # Test framework
